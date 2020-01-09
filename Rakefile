@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'bundler/gem_tasks'
 require 'github/markup'
 require 'redcarpet'
@@ -5,6 +7,15 @@ require 'rspec/core/rake_task'
 require 'rubocop/rake_task'
 require 'yard'
 require 'yard/rake/yardoc_task'
+
+desc 'Don\'t run Rubocop for unsupported versions'
+begin
+  args = if RUBY_VERSION >= '2.0.0'
+           %i[spec make_bin_executable yard rubocop check_binstubs]
+         else
+           %i[spec make_bin_executable yard]
+         end
+end
 
 YARD::Rake::YardocTask.new do |t|
   OTHER_PATHS = %w[].freeze
@@ -28,7 +39,7 @@ task :check_binstubs do
   unless Dir.glob('bin/**/*.rb').empty?
     bin_list = Gem::Specification.load('sensu-plugins-chrony.gemspec').executables
     bin_list.each do |b|
-      `which #{ b }`
+      `which #{b}`
       unless $CHILD_STATUS.success?
         puts "#{b} was not a binstub"
         exit
@@ -37,4 +48,4 @@ task :check_binstubs do
   end
 end
 
-task default: %i[spec make_bin_executable yard rubocop check_binstubs]
+task default: args

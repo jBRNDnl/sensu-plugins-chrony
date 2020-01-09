@@ -1,3 +1,5 @@
+AllCops:
+  TargetRubyVersion: 2.4
 
 MethodLength:
   Max: 200
@@ -7,6 +9,9 @@ LineLength:
 
 AbcSize:
   Max: 100
+
+BlockLength:
+  Max: 50
 
 FileName:
   Enabled: false
@@ -26,5 +31,5 @@ IfUnlessModifier:
 RegexpLiteral:
   Enabled: false
 
-Style/Documentation:
+Documentation:
   Enabled: false
