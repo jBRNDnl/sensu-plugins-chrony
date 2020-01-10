@@ -25,5 +25,7 @@ deploy:
   on:
     tags: true
     all_branches: true
-    rvm: 2.3.0
     rvm: 2.4.1
+
+    api_key:
+      63fadd16a2e6ff8c435fded9a03324ac6a541c83
