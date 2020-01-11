@@ -1,33 +1,35 @@
+AllCops:
+  TargetRubyVersion: 2.4
 
-Metrics/MethodLength:
+MethodLength:
   Max: 200
 
-Layout/LineLength:
+LineLength:
   Max: 160
 
-Metrics/AbcSize:
+AbcSize:
   Max: 100
 
-Metrics/BlockLength:
+BlockLength:
   Max: 50
 
-Naming/FileName:
+FileName:
   Enabled: false
 
-Metrics/PerceivedComplexity:
+PerceivedComplexity:
   Enabled: false
 
-Metrics/CyclomaticComplexity:
+CyclomaticComplexity:
   Enabled: false
 
-Metrics/ClassLength:
+ClassLength:
   Enabled: false
 
-Style/IfUnlessModifier:
+IfUnlessModifier:
   Enabled: false
 
-Style/RegexpLiteral:
+RegexpLiteral:
   Enabled: false
 
-Style/Documentation:
+Documentation:
   Enabled: false
