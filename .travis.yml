@@ -23,7 +23,7 @@ script:
 before_deploy:
 - bash -c "[ ! -d bonsai/ ] && git clone https://github.com/sensu/sensu-go-bonsai-asset.git bonsai || echo 'bonsai/ exists, skipping git clone'"
 deploy:
-- provider: script
+  provider: script
   script: bonsai/ruby-runtime/travis-build-bonsai-assets.sh sensu-plugins-chrony
   skip_cleanup: true
   on:
