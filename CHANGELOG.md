@@ -5,6 +5,9 @@ This CHANGELOG follows the format listed [here](https://github.com/sensu-plugins
 
 ## [Unreleased]
 
+## [4.0.1] - 2020-03-13
+### Fixed
+- Typo in send_warning. It stated send_waning on a to high stratum. This resulted in an exception. 
 
 ## [4.0.0] - 2020-01-13
 ### Fixed
